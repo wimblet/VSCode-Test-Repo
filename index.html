@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Vue Sample</title>
+    <title>Vue Instance Lifecycle</title>
   </head>
   <body>
     <div id="app">
@@ -13,6 +13,19 @@
         el: '#app',
         data: {
           message: 'Hello Vue.js!'
+        },
+        beforeCreate: function() {
+          console.log("beforeCreate");
+        },
+        created: function() {
+          console.log("created");
+        },
+        mounted: function() {
+          console.log("mounted");
+          this.message = 'Hello Vue!';
+        },
+        updated: function() {
+          console.log("updated");
         }
       });
     </script>
